@@ -1,3 +1,7 @@
+from __future__ import print_function
+from __future__ import division
+
+
 data = [[[0.44, 0.83], 0],
         [[0.83, 0.66], 1],
         [[0.52, 0.83], 0],

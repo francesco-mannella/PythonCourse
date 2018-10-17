@@ -1,3 +1,6 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
 data = [[[0.44, 0.83], 0],
         [[0.83, 0.66], 1],
         [[0.52, 0.83], 0],
