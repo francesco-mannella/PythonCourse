@@ -4,7 +4,7 @@
 from __future__ import print_function
 from __future__ import division
 
-num = 17
+num = 1
 
 # take input from the user
 # num = int(input("Enter a number: "))
