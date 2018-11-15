@@ -21,6 +21,9 @@ v_th = 5.0 # mV
 w_ex = 20.0
 w_in = -400.0
 
+sim_time = 500
+
+
 # all lower and upper diagonals from 0 to 50 are set to 1
 Ex = np.eye(n_neurons, n_neurons) 
 for i in range(1,5):
@@ -33,8 +36,6 @@ In = 1 - Ex
 # Fill weights matrix with lateral excitations and 
 # lateral inhibitions
 W =  w_ex*Ex  + w_in*In 
-
-sim_time = 500
 
 # Arrays
 v = np.zeros([n_neurons, sim_time])
