@@ -73,8 +73,9 @@ for epoca in range(epoche):
     plot_epoche.set_text("%d" % epoca)    
    
     # ricalcola i centroidi facendo la media dei dati per ogni gruppo
-    centroids = np.vstack([data[nk==i].mean(0) 
-        for i in range(num_clusters)])
+    for i in range(num_clusters):
+        if (nk==i).sum() > 0:
+            centroids[i] = data[nk==i].mean(0) 
     
     plt.pause(0.005) 
 
