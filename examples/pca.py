@@ -18,7 +18,7 @@ def PCA(X, num_PCs=None) :
         num_PCs = X.shape[1]
     
     # estract the mean from the dataset
-    X = X - X.mean(0).reshape(1, -1)
+    X -= X.mean(0).reshape(1, -1)
     # compute the covariance matrix  
     C = np.cov(X.T)
     
@@ -39,7 +39,21 @@ def PCA(X, num_PCs=None) :
 
 if __name__ == "__main__":
     
-    X = np.array([[-1, -1], [-2, -1], [-3, -2], [1, 1], [2, 1], [3, 2]])
+    import matplotlib.pyplot as plt
+    import mnist
 
-    data, E, d = PCA(X, 2)
-    print(data)
+    data = mnist.train_images()[:200]/255.0
+    labels = mnist.train_labels()[:200]
+
+    num_patterns, pattern_side, _ = data.shape
+    pattern_len = pattern_side*pattern_side
+    data = data.reshape(num_patterns, pattern_len)
+
+    data_out, E, d = PCA(data, 2)
+    
+    plt.imshow(E[:,1].reshape(pattern_side, 
+        pattern_side))
+    plt.show()
+    plt.hist(labels)
+    plt.show()
+

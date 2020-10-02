@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 # parameters
 n = 100
-alpha = 0.9
+alpha = 0.2
 lbd = 0.00001
 stime = 20
 
